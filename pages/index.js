@@ -1,8 +1,12 @@
+import React from 'react'
 import Header from '../components/Header'
 import Jumbotron from '../components/Jumbotron'
 import Event from '../components/Event'
+
+import StylesProvider from '../components/StylesProvider'
+
 const post = {
-  image: 'https://aloveroftheroad.files.wordpress.com/2016/07/unusual-weekend04.jpg',
+  image: 'http://wallpapers.wallpapersdepo.net/free-wallpapers/3149/Airliner-Landing-at-Airport-Maho-Bay-Saint-Martin.jpg',
   tag: 'Adventures',
   title: 'Unusual weekends',
   comments: 12,
@@ -21,17 +25,13 @@ const event = {
 
 const Index = () => {
   return (
-    <div>
+    <StylesProvider>
       <Header title="Bristou" subtitle="Theme" />
       <Jumbotron {...post } />
       <Event {...event} />
       Hola!
-    </div>
+    </StylesProvider>
   )
 }
 
 export default Index
-
-// Node
-// const React = require('react')
-// module.exports Index
