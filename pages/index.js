@@ -2,6 +2,7 @@ import React from 'react'
 import Header from '../components/Header'
 import Jumbotron from '../components/Jumbotron'
 import Event from '../components/Event'
+import styled from 'styled-components'
 
 import StylesProvider from '../components/StylesProvider'
 
@@ -23,12 +24,37 @@ const event = {
   callToAccion: 'http://google.com'
 }
 
+const Row = styled.div`
+  outline: 1px solid red;
+  display: flex;
+  width: 1024px;
+  margin: 0 auto;
+  box-sizing: border-box;
+`
+const Column = styled.div`
+  outline: 1px solid green;
+  width: ${props => props.size * 100 / 12}%;
+  padding: 0 25px;
+  box-sizing: border-box;
+`
+
 const Index = () => {
   return (
     <StylesProvider>
       <Header title="Bristou" subtitle="Theme" />
       <Jumbotron {...post } />
-      <Event {...event} />
+      <div>
+        <Row>
+          <Column size="8" >
+            <Event {...event} />
+          </Column>
+          <Column size="4" >
+            ksdjhgfhfd
+          </Column>
+        </Row>
+
+
+      </div>
       Hola!
     </StylesProvider>
   )
